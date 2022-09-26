@@ -44,12 +44,8 @@ public class Polynomial {
         Polynomial addedPoly = new Polynomial(finalCoefficients);	
         return addedPoly;
         	
-        }
+    }
 
-    
-
-
-	
 	public double evaluate(double value) {
 		
 		double evaluation = 0;		
