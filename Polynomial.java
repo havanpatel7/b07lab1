@@ -19,47 +19,46 @@ public class Polynomial {
     	
         if(passedObjLength >= intialPolyLength) { // checking poly lengths
         	
-        	//setting coefficients
-        	finalCoefficients = new double[object.coefficients.length];
-        	finalCoefficients = object.coefficients;
+            //setting coefficients
+            finalCoefficients = new double[object.coefficients.length];
+            finalCoefficients = object.coefficients;
         	
-        	//adding values
+            //adding values
             for(int i =0; i < intialPolyLength; i++) {
-            	finalCoefficients[i] += this.coefficients[i];
+                finalCoefficients[i] += this.coefficients[i];
             }
 
         }
         else {
         	
-        	//setting coefficients
-        	finalCoefficients = new double[this.coefficients.length];
-        	finalCoefficients = this.coefficients;
+            //setting coefficients
+            finalCoefficients = new double[this.coefficients.length];
+            finalCoefficients = this.coefficients;
         	
-        	//adding values
-        	for(int i =0; i < passedObjLength; i++) {
+            //adding values
+            for(int i =0; i < passedObjLength; i++) {
             	finalCoefficients[i] += object.coefficients[i];
             }
         }
         //init new poly with resulting coefficients 
         Polynomial addedPoly = new Polynomial(finalCoefficients);	
-        return addedPoly;
-        	
+        return addedPoly;	
     }
 
-	public double evaluate(double value) {
+    public double evaluate(double value) {
 		
-		double evaluation = 0;		
+	double evaluation = 0;		
 	    
-		//calculating the evaluation
-		for(int i = 0; i < this.coefficients.length; i++) {
-			evaluation += ((this.coefficients[i])*(Math.pow(value, i)));
-		}
+	//calculating the evaluation
+	for(int i = 0; i < this.coefficients.length; i++) {
+	    evaluation += ((this.coefficients[i])*(Math.pow(value, i)));
+	}
 
-		return evaluation;
+	return evaluation;
 		
 	}
 	
-	public boolean hasRoot(double value) {
-    	return (evaluate(value) == 0); 
+    public boolean hasRoot(double value) {
+        return (evaluate(value) == 0); 
     }
 }
